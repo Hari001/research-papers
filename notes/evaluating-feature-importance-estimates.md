@@ -1,17 +1,21 @@
 # Evaluating feature importance estimates
 
 Authors: Sara Hooker, Dumitru Erhan, Pieter-Jan Kindermans, Been Kim
+
 Arxiv Link: https://arxiv.org/abs/1806.10758
 
 ## Importance of feature estimation
 
+
 Identifying the accuracy of a feature important estimate is very useful for interpreting and evaluating a model.
 
 ## Challenges
+
 1. Understanding or interpreting what a model represents is difficult when the dimensionality of the input space is high.
 2. There is not ground truth for feature importance
 
 ## Proposed Benchmark for Evaluation
+
 
 **ROAR** - **R**em**O**ve **A**nd **R**etrain
 
@@ -21,6 +25,8 @@ Identifying the accuracy of a feature important estimate is very useful for inte
 2. Remove a fraction of the most importnt features from each data point (Removing features => Replacing them with an uninformative value e.g., the mean of the feature).
 3. Retrain the model with the modified inputs.
 4. Measure the degradation of performance.
+
+![Process](images/evaluating-feature-importance-estimates/process.png)
 
 The estimator with the most performance degradation is the best one.
 
@@ -43,6 +49,9 @@ Assigning random importance to the input features
 
 
 ## Key Results
+
+![Example](images/evaluating-feature-importance-estimates/example.png)
+![Plot](images/evaluating-feature-importance-estimates/plot.png)
 
 1. The basic estimators (without squaring and averaging) often perform worse than the baseline estimator.
 2. Sqauring and averaging based estimators outperform all the other ones
